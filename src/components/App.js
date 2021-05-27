@@ -1,11 +1,12 @@
 import Header from '../components/ui/Header';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider>
       <Header />
       Hello!
-    </div>
+    </ThemeProvider>    
   );
 }
 

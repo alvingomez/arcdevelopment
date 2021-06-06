@@ -17,9 +17,9 @@ function ElevationScroll(props) {
       elevation: trigger ? 4 : 0, //4 is the floating state and 0 flat
     });
   } 
-  
+   
  
-function Header() {    
+function Header(props) {    
     return (
         <ElevationScroll>
         <AppBar>

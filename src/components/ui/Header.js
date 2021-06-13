@@ -1,8 +1,9 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import { Toolbar } from '@material-ui/core';
-
+import { Toolbar, Typography } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 function ElevationScroll(props) {
     const { children} = props;
@@ -17,15 +18,31 @@ function ElevationScroll(props) {
       elevation: trigger ? 4 : 0, //4 is the floating state and 0 flat
     });
   } 
-   
+  
+ // This will provide "themes" inside of our styles 
+  const useStyles = makeStyles((theme) => ({
+   toolbarMargin:{
+     //Using the spread operator we have copied the "styles" over to apply to a component
+     ...theme.mixins.toolbar     
+   }
+ }))
  
-function Header(props) {    
+function Header({props}) {    
+    const classes = useStyles() 
+     
     return (
+      <>
         <ElevationScroll>
-        <AppBar>
-            <Toolbar>Arc Development</Toolbar>
+        <AppBar position="fixed">
+            <Typography variant="h3"> 
+              <Toolbar>
+                Arc Development
+              </Toolbar>
+            </Typography>            
         </AppBar>
-        </ElevationScroll>       
-    )
+        </ElevationScroll>   
+        <div className={classes.toolbarMargin} /> 
+      </>    
+    );
 }
 export default Header

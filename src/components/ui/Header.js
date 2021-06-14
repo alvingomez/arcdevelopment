@@ -24,9 +24,12 @@ function ElevationScroll(props) {
   const useStyles = makeStyles((theme) => ({
    toolbarMargin:{
      //Using the spread operator we have copied the "styles" over to apply to a component
-     ...theme.mixins.toolbar     
+     ...theme.mixins.toolbar,
+     //Added a little extra margin bottom of 3 to offeset to offset the height that was 
+     //added with the responsive units that added units in logo 
+     marginBottom: "3em"     
    },
-   logo:{
+   logo:{ 
      height:"7em"
    }
  }))

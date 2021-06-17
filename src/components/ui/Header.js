@@ -3,6 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { makeStyles } from '@material-ui/core/styles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 import logo from '../../assets/logo.svg';
 
@@ -43,6 +45,13 @@ function Header({props}) {
         <AppBar position="fixed">            
               <Toolbar disableGutters> 
               <img alt="company logo" src={logo} className={classes.logo} />
+              <Tabs>
+                <Tab label="Home" />
+                <Tab label="Services" />
+                <Tab label="The Revolution" />
+                <Tab label="About Us" />
+                <Tab label="Contact Us" />
+              </Tabs>
               </Toolbar>                       
         </AppBar>
         </ElevationScroll>   
